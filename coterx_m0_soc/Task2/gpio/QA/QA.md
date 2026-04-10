@@ -5,3 +5,14 @@
 2.cm0 CPU端口有哪些？各是什么含义？应该如何集成？
 
 3.指令是什么？指令集又是什么？
+
+4.为什么有code sram 和 data sram？ 它们分别存储什么内容？
+
+5.控制流水灯，难道不需要CPU控制start寄存器使得流水灯硬件开始工作吗？
+
+6.为什么要产生cpuresetn？ 什么时候使用cpuresetn，什么时候使用RSTn？
+always @(posedge clk or negedge RSTn)begin
+        if (~RSTn) cpuresetn <= 1'b0;
+        else if (SYSRESETREQ) cpuresetn <= 1'b0;
+        else cpuresetn <= 1'b1;
+end
