@@ -29,8 +29,8 @@ assign trans_en = HSEL & HTRANS[1];
 wire write_en;
 assign write_en = trans_en & HWRITE;
 
-wire read_en;
-assign read_en = trans_en & (~HWRITE);
+// wire read_en;
+// assign read_en = trans_en & (~HWRITE);
 
 reg [3:0] size_dec;
 always@(*) begin

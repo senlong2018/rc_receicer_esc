@@ -47,7 +47,11 @@ module AHBlite_Decoder
 assign P0_HSEL = (HADDR[31:16] == 16'h0000) ? Port0_en : 1'd0;
 /***********************************/
 
-
+//RAMDATA-----------------------------
+//0X20000000-0X2000FFFF
+/*Insert RAMDATA decoder code there*/
+assign P1_HSEL = (HADDR[31:16] == 16'h2000) ? Port1_en : 1'b0;
+/***********************************/
 
 //PERIPHRAL-----------------------------
 
@@ -69,12 +73,6 @@ assign P3_HSEL = 1'b0;
 //0X40000020 OUT DATA
 /*Insert GPIO decoder code there*/
 assign P4_HSEL = (HADDR[31:4] == 28'h4000002) ? Port4_en : 1'd0;
-/***********************************/
-
-//RAMDATA-----------------------------
-//0X20000000-0X2000FFFF
-/*Insert RAMDATA decoder code there*/
-assign P1_HSEL = (HADDR[31:16] == 16'h2000) ? Port1_en : 1'b0;
 /***********************************/
 
 endmodule

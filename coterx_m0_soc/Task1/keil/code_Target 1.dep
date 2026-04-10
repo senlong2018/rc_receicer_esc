@@ -1,2 +1,0 @@
-Dependencies for Project 'code', Target 'Target 1': (DO NOT MODIFY !)
-F (.\startup_CMSDK_CM0.s)(0x609642A6)(--cpu Cortex-M0 -g --apcs=interwork -I D:\Anlogic_M0\M0_Experiments\Experiments\Task1\keil\RTE-I "D:\Ksoftware\Keil for Arm\ARM\PACK\Keil\V2M-MPS2_CMx_BSP\1.8.0"-I "D:\Ksoftware\Keil for Arm\ARM\CMSIS\Include"--pd "__UVISION_VERSION SETA 514" --pd "CMSDK_CM0 SETA 1"--list .\listings\startup_cmsdk_cm0.lst --xref -o .\startup_cmsdk_cm0.o --depend .\startup_cmsdk_cm0.d)
