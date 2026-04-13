@@ -16,3 +16,5 @@ always @(posedge clk or negedge RSTn)begin
         else if (SYSRESETREQ) cpuresetn <= 1'b0;
         else cpuresetn <= 1'b1;
 end
+
+7.介绍一下CPU运行中的取指，译码，执行 3个步骤都在做什么？如何流水起来的？
