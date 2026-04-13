@@ -392,22 +392,22 @@ Block_RAM RAM_DATA(
 // WaterLight
 //------------------------------------------------------------------------------
 
-// WaterLight WaterLight(
-//         .WaterLight_mode(WaterLight_mode),
-//         .WaterLight_speed(WaterLight_speed),
-//         .clk(clk),
-//         .RSTn(cpuresetn),
-//         //.LEDclk(LEDclk),
-//         .LED(LED)
-// );
-
-liushui liushui_inst(
+WaterLight WaterLight(
         .WaterLight_mode(WaterLight_mode),
         .WaterLight_speed(WaterLight_speed),
         .clk(clk),
-        .rstn(cpuresetn),
+        .RSTn(cpuresetn),
         //.LEDclk(LEDclk),
-        .light_o(LED)
+        .LED(LED)
 );
+
+// liushui liushui_inst(
+//         .WaterLight_mode(WaterLight_mode),
+//         .WaterLight_speed(WaterLight_speed),
+//         .clk(clk),
+//         .rstn(cpuresetn),
+//         //.LEDclk(LEDclk),
+//         .light_o(LED)
+// );
 
 endmodule
