@@ -1,0 +1,8 @@
+# WINDOWS 64位版
+https://anlogic.oss-cn-shanghai.aliyuncs.com/web_doc/%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/TD_Windows/TD_4.6/u389fha1q389hqwd/TD_4.6.8_CPLD_Release_96021_NL.msi
+
+# WINDOWS 32位版
+https://anlogic.oss-cn-shanghai.aliyuncs.com/web_doc/%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/TD_Windows/TD_4.6/u389fha1q389hqwd/TD_4.6.8_CPLD_Release_96021_32bit_NL.msi
+
+# LINUX版
+https://anlogic.oss-cn-shanghai.aliyuncs.com/web_doc/%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/TD_Linux/TD_4.6/u389fha1q389hqwd/TD_4.6.8_CPLD_Release_96021_NL.zip

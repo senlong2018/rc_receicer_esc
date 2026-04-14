@@ -1,0 +1,92 @@
+standard
+***Report Model: CortexM0_SoC Device: EG4X20BG256***
+
+IO Statistics
+#IO                        20
+  #input                    7
+  #output                  12
+  #inout                    1
+
+Utilization Statistics
+#lut                     5639   out of  19600   28.77%
+#reg                     1537   out of  19600    7.84%
+#le                      5664
+  #lut only              4127   out of   5664   72.86%
+  #reg only                25   out of   5664    0.44%
+  #lut&reg               1512   out of   5664   26.69%
+#dsp                        3   out of     29   10.34%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    8   out of     16   50.00%
+#pad                       20   out of    188   10.64%
+  #ireg                     5
+  #oreg                     0
+  #treg                     0
+#pll                        0   out of      4    0.00%
+#gclk                       0   out of     16    0.00%
+
+Clock Resource Statistics
+Index     ClockNet       Type               DriverType         Driver            Fanout
+#1        clk_dup_4      GCLK               io                 clk_syn_5.di      1145
+#2        SWCLK_dup_1    GCLK               io                 SWCLK_syn_2.di    90
+
+
+Detailed IO Report
+
+   Name     Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+   RSTn       INPUT         P1        LVCMOS25          N/A           N/A        NONE    
+  SWCLK       INPUT        E10        LVCMOS25          N/A           N/A        NONE    
+   clk        INPUT        J12        LVCMOS25          N/A           N/A        NONE    
+  col[3]      INPUT        D11        LVCMOS25          N/A           N/A        IREG    
+  col[2]      INPUT         A6        LVCMOS25          N/A           N/A        IREG    
+  col[1]      INPUT        K15        LVCMOS25          N/A           N/A        IREG    
+  col[0]      INPUT         P9        LVCMOS25          N/A           N/A        IREG    
+  LED[7]     OUTPUT        B16        LVCMOS25           8            N/A        NONE    
+  LED[6]     OUTPUT        E12        LVCMOS25           8            N/A        NONE    
+  LED[5]     OUTPUT         F9        LVCMOS25           8            N/A        NONE    
+  LED[4]     OUTPUT         B8        LVCMOS25           8            N/A        NONE    
+  LED[3]     OUTPUT         B3        LVCMOS25           8            N/A        NONE    
+  LED[2]     OUTPUT         G3        LVCMOS25           8            N/A        NONE    
+  LED[1]     OUTPUT        T15        LVCMOS25           8            N/A        NONE    
+  LED[0]     OUTPUT         K6        LVCMOS25           8            N/A        NONE    
+  row[3]     OUTPUT         P5        LVCMOS25           8            N/A        NONE    
+  row[2]     OUTPUT         M7        LVCMOS25           8            N/A        NONE    
+  row[1]     OUTPUT        H15        LVCMOS25           8            N/A        NONE    
+  row[0]     OUTPUT         G6        LVCMOS25           8            N/A        NONE    
+  SWDIO       INOUT         H5        LVCMOS25           8            N/A        IREG    
+
+Report Hierarchy Area:
++-------------------------------------------------------------------------------------------------------------+
+|Instance                            |Module             |le     |lut     |ripple  |seq     |bram    |dsp     |
++-------------------------------------------------------------------------------------------------------------+
+|top                                 |CortexM0_SoC       |5664   |5527    |112     |1542    |8       |3       |
+|  RAMCODE_Interface                 |AHBlite_Block_RAM  |13     |13      |0       |7       |0       |0       |
+|  RAMDATA_Interface                 |AHBlite_Block_RAM  |32     |32      |0       |16      |0       |0       |
+|  RAM_CODE                          |Block_RAM          |7      |7       |0       |1       |4       |0       |
+|  RAM_DATA                          |Block_RAM          |7      |7       |0       |0       |4       |0       |
+|  WaterFlow_inst                    |WaterFlow          |95     |86      |9       |49      |0       |0       |
+|  WaterLight_Interface              |AHBlite_WaterLight |32     |31      |0       |23      |0       |0       |
+|  key_filter_gen[0]$key_filter_inst |key_filter         |60     |49      |11      |26      |0       |0       |
+|    key_neg_inst                    |genpart_sync       |1      |1       |0       |1       |0       |0       |
+|  key_filter_gen[1]$key_filter_inst |key_filter         |59     |48      |11      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync       |2      |2       |0       |2       |0       |0       |
+|  key_filter_gen[2]$key_filter_inst |key_filter         |60     |49      |11      |25      |0       |0       |
+|  key_filter_gen[3]$key_filter_inst |key_filter         |62     |51      |11      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync       |2      |2       |0       |2       |0       |0       |
+|  u_logic                           |cortexm0ds_logic   |5225   |5142    |59      |1333    |0       |3       |
++-------------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets  
+    #1          1       3071  
+    #2          2       1514  
+    #3          3       559   
+    #4          4       415   
+    #5        5-10      614   
+    #6        11-50     371   
+    #7       51-100      16   
+    #8       101-500     2    
+  Average     3.51            

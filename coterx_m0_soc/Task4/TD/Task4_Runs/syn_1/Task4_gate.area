@@ -1,0 +1,55 @@
+standard
+***Report Model: CortexM0_SoC Device: EG4X20BG256***
+
+IO Statistics
+#IO                        20
+  #input                    7
+  #output                  12
+  #inout                    1
+
+LUT Statistics
+#Total_luts              5386
+  #lut4                  4320
+  #lut5                   776
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b             290
+
+Utilization Statistics
+#lut                     5386   out of  19600   27.48%
+#reg                     1537   out of  19600    7.84%
+#le                         0
+#dsp                        3   out of     29   10.34%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    8   out of     16   50.00%
+#pad                       20   out of    188   10.64%
+  #ireg                     5
+  #oreg                     0
+  #treg                     0
+#pll                        0   out of      4    0.00%
+
+Report Hierarchy Area:
++-------------------------------------------------------------------------------------------------------+
+|Instance                            |Module               |lut     |ripple  |seq     |bram    |dsp     |
++-------------------------------------------------------------------------------------------------------+
+|top                                 |CortexM0_SoC         |5096    |290     |1542    |8       |3       |
+|  Interconncet                      |AHBlite_Interconnect |1       |0       |3       |0       |0       |
+|    SlaveMUX                        |AHBlite_SlaveMUX     |1       |0       |3       |0       |0       |
+|  RAMCODE_Interface                 |AHBlite_Block_RAM    |11      |0       |17      |0       |0       |
+|  RAMDATA_Interface                 |AHBlite_Block_RAM    |25      |0       |17      |0       |0       |
+|  RAM_CODE                          |Block_RAM            |4       |0       |0       |4       |0       |
+|  RAM_DATA                          |Block_RAM            |4       |0       |0       |4       |0       |
+|  WaterFlow_inst                    |WaterFlow            |83      |33      |49      |0       |0       |
+|  WaterLight_Interface              |AHBlite_WaterLight   |9       |0       |42      |0       |0       |
+|  key_filter_gen[0]$key_filter_inst |key_filter           |37      |21      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync         |0       |0       |2       |0       |0       |
+|  key_filter_gen[1]$key_filter_inst |key_filter           |37      |21      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync         |0       |0       |2       |0       |0       |
+|  key_filter_gen[2]$key_filter_inst |key_filter           |37      |21      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync         |0       |0       |2       |0       |0       |
+|  key_filter_gen[3]$key_filter_inst |key_filter           |37      |21      |27      |0       |0       |
+|    key_neg_inst                    |genpart_sync         |0       |0       |2       |0       |0       |
+|  u_logic                           |cortexm0ds_logic     |4802    |173     |1299    |0       |3       |
++-------------------------------------------------------------------------------------------------------+
