@@ -1,0 +1,39 @@
+module Block_RAM #(
+    parameter ADDR_WIDTH = 12,
+    // HEX file to initialize memory. Default is relative to the simulator working
+    // directory used by the Makefile (veri/tc/tc_test), so point to the keil folder.
+    parameter string HEX_FILE = "/home/ICer/ic_prjs/rc_receicer_esc/coterx_m0_soc/Task3/hardware/keil_src/code.hex"
+)   (
+    input clka,
+    input [ADDR_WIDTH-1:0] addra,
+    input [ADDR_WIDTH-1:0] addrb,
+    input [31:0] dina,
+    input [3:0] wea,
+    output reg [31:0] doutb
+);
+
+(* ram_style="block" *)reg [31:0] mem [(2**ADDR_WIDTH-1):0];
+
+initial begin
+    // use parameterized path for portability; simulation harness can override if needed
+    $readmemh(HEX_FILE, mem);
+end
+
+always@(posedge clka) begin
+    if(wea[0]) mem[addra][7:0] <= dina[7:0];
+end
+always@(posedge clka) begin
+    if(wea[1]) mem[addra][15:8] <= dina[15:8];
+end
+always@(posedge clka) begin
+    if(wea[2]) mem[addra][23:16] <= dina[23:16];
+end
+always@(posedge clka) begin
+    if(wea[3]) mem[addra][31:24] <= dina[31:24];
+end
+
+always@(posedge clka) begin
+    doutb <= mem[addrb];
+end
+
+endmodule

@@ -1,0 +1,1 @@
+logic tx_done = tb.tx_done;
