@@ -7,5 +7,5 @@
 ../../../rtl/Block_RAM.v
 ../../../rtl/AHBlite_WaterLight.v
 ../../../rtl/WaterLight.v
-//../../../rtl/liushui.v
+../../../rtl/WaterFlow.sv
 ../../../rtl/CortexM0_SoC.v
