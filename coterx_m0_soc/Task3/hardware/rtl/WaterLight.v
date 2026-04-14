@@ -19,6 +19,9 @@ always@(posedge clk or negedge RSTn) begin
     else pwm_cnt <= pwm_cnt + 1'b1;
 end
 
+//------------------------------------------------------
+//  这种使用分频时钟的做法不是一个好的设计，应该使用同一个时钟外加计数器来实现
+//------------------------------------------------------
 reg light_clk;
 
 always@(posedge clk or negedge RSTn) begin
