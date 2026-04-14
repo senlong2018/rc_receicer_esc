@@ -1,4 +1,4 @@
-// Task3 RTL files
+// Task4 RTL files (match Task4/rtl)
 ../../../rtl/cortexm0ds_logic.v
 ../../../rtl/AHBlite_Interconnect.v
 ../../../rtl/AHBlite_Decoder.v
@@ -7,5 +7,4 @@
 ../../../rtl/Block_RAM.v
 ../../../rtl/AHBlite_WaterLight.v
 ../../../rtl/WaterLight.v
-//../../../rtl/liushui.v
 ../../../rtl/CortexM0_SoC.v
