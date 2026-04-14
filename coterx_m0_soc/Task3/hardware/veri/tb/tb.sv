@@ -24,7 +24,7 @@ CortexM0_SoC soc (
     .RSTn   (reset_n),
     .SWDIO  (1'bz),
     .SWCLK  (1'b0),
-    .ioPin  (LED)
+    .LED    (LED)
 );
 
 
