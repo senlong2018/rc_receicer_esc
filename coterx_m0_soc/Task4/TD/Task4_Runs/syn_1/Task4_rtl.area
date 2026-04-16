@@ -1,0 +1,58 @@
+standard
+***Report Model: CortexM0_SoC Device: EG4X20BG256***
+
+IO Statistics
+#IO                        20
+  #input                    7
+  #output                  12
+  #inout                    1
+
+Gate Statistics
+#Basic gates            20295
+  #and                   9586
+  #nand                     0
+  #or                    1975
+  #nor                      0
+  #xor                     72
+  #xnor                     0
+  #buf                      0
+  #not                   6509
+  #bufif1                   1
+  #MX21                   610
+  #FADD                     0
+  #DFF                   1542
+  #LATCH                    0
+#MACRO_ADD                 12
+#MACRO_EQ                  46
+#MACRO_MULT                 1
+#MACRO_MUX                309
+#MACRO_OTHERS               8
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------+
+|Instance                            |Module               |gates  |seq    |macros |
++----------------------------------------------------------------------------------+
+|top                                 |CortexM0_SoC         |18753  |1542   |67     |
+|  Interconncet                      |AHBlite_Interconnect |36     |3      |3      |
+|    Decoder                         |AHBlite_Decoder      |0      |0      |3      |
+|    SlaveMUX                        |AHBlite_SlaveMUX     |36     |3      |0      |
+|  RAMCODE_Interface                 |AHBlite_Block_RAM    |17     |17     |0      |
+|  RAMDATA_Interface                 |AHBlite_Block_RAM    |5      |17     |0      |
+|  RAM_CODE                          |Block_RAM            |0      |0      |4      |
+|  RAM_DATA                          |Block_RAM            |0      |0      |4      |
+|  WaterFlow_inst                    |WaterFlow            |49     |49     |2      |
+|  WaterLight_Interface              |AHBlite_WaterLight   |7      |42     |0      |
+|  key_filter_gen[0]$key_filter_inst |key_filter           |48     |28     |10     |
+|    key_neg_inst                    |genpart_sync         |2      |3      |0      |
+|    key_pos_inst                    |genpart_sync         |2      |0      |0      |
+|  key_filter_gen[1]$key_filter_inst |key_filter           |48     |28     |10     |
+|    key_neg_inst                    |genpart_sync         |2      |3      |0      |
+|    key_pos_inst                    |genpart_sync         |2      |0      |0      |
+|  key_filter_gen[2]$key_filter_inst |key_filter           |48     |28     |10     |
+|    key_neg_inst                    |genpart_sync         |2      |3      |0      |
+|    key_pos_inst                    |genpart_sync         |2      |0      |0      |
+|  key_filter_gen[3]$key_filter_inst |key_filter           |48     |28     |10     |
+|    key_neg_inst                    |genpart_sync         |2      |3      |0      |
+|    key_pos_inst                    |genpart_sync         |2      |0      |0      |
+|  u_logic                           |cortexm0ds_logic     |18445  |1300   |14     |
++----------------------------------------------------------------------------------+
