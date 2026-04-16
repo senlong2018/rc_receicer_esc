@@ -1,0 +1,25 @@
+// Task7 RTL files
+../../../rtl/cortexm0ds_logic.v
+../../../rtl/AHBlite_Interconnect.v
+../../../rtl/AHBlite_Decoder.v
+../../../rtl/AHBlite_SlaveMUX.v
+../../../rtl/AHBlite_Block_RAM.v
+../../../rtl/Block_RAM.v
+../../../rtl/AHBlite_Buzzermusic.v
+../../../rtl/AHBlite_SlaveMUX.v
+../../../rtl/AHB_keyboard.v
+../../../rtl/keyboard.v
+../../../rtl/keyboard_filter.v
+../../../rtl/keyboard_reg.v
+../../../rtl/keyboard_scan.v
+../../../rtl/beat_cnt.v
+../../../rtl/beat_decoder.v
+../../../rtl/music_ctrl.v
+../../../rtl/buzzermusic_1.v
+../../../rtl/addr_cnt.v
+../../../rtl/tune_decoder.v
+../../../rtl/tune_pwm.v
+../../../rtl/BlockROM1.v
+../../../rtl/BlockROM2.v
+../../../rtl/BlockROM3.v
+../../../rtl/CortexM0_SoC.v
