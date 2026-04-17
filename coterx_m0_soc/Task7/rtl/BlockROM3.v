@@ -9,7 +9,7 @@ module BlockROM3#(
     );
 (*ramstyle="block"*)reg[DATA_WIDTH-1:0]mem[(2**ADDR_WIDTH-1):0] ;
 initial begin
-    $readmemh("E:/M0/Experiments/Task7/rtl/3.txt", mem);
+    $readmemh("E:/DesignStart-Arm/rc_receicer_esc/coterx_m0_soc/Task7/rtl/3.txt", mem);
     end       
 always @(posedge clk)begin
     if (en) begin

@@ -6,26 +6,35 @@ module tb;
     logic clk;
     logic reset_n;
 
-    // output from SoC (LEDs)
-    wire [7:0] LED;
+    // keyboard iface
+    logic [3:0] col;
+    wire  [3:0] row;
+
+    // SoC outputs (beep or LEDs may exist)
+    wire beep;
 
 initial begin
     clk = 1'b0;
     reset_n = 1'b0;
-    #1000;
+    col = 4'b1111; // idle (no key pressed)
+    // wait a few cycles then release reset synchronized to clk
+    repeat(5) @(posedge clk);
     reset_n = 1'b1;
 end
 
-always #5 clk = ~clk; // 10ns period -> 50MHz
+always #(`CLK_PERIOD/2) clk = ~clk;
 
-// instantiate SoC (uses liushui internally)
+// instantiate SoC
 CortexM0_SoC soc (
     .clk    (clk),
     .RSTn   (reset_n),
+    .col    (col),
+    .row    (row),
     .SWDIO  (1'bz),
     .SWCLK  (1'b0),
-    .LED    (LED)
+    .beep   (beep)
 );
 
+// stimulus and monitors moved to TC (tc_test.v)
 
 endmodule
