@@ -372,7 +372,7 @@ Block_RAM RAM_DATA(
 );
 
 
-wire [15:0]key_data;
+wire [15:0]key_reg;
 wire  key_clear;
 AHBlite_keyboard keyboard_interface(
      /* Connect to Interconnect Port 2 */    
@@ -392,7 +392,7 @@ AHBlite_keyboard keyboard_interface(
 .HREADY (HREADY_P2),
 .HREADYOUT (HREADYOUT_P2),
 .HRESP (HRESP_P2),
-.key_data (key_data),
+.key_reg (key_reg),
 .key_clear (key_clear)
 );
 
@@ -405,7 +405,7 @@ Keyboard keyboard(
         ,.row(row)
         // ,.key(key)
         ,.key_interrupt(key_interrupt)
-        ,.key_data(key_data)
+        ,.key_reg(key_reg)
 );
 
 

@@ -56,7 +56,9 @@ sim-verdi:
 	-full64 \
 	-debug_access+all \
 	-sverilog \
+	+define+FPGA \
 	+incdir+../../tb \
+	+incdir+/home/ICer/xiaomeige/ip_common_lib/inc \
 	-f ../../tb/filelist \
 	-f ../../tb/codelist \
 	-override_timescale=1ns/1ps \
@@ -66,14 +68,6 @@ sim-verdi:
 	+fsdb+all \
 	-R
 
-# verdi:
-# 	verdi \
-# 	-nologo \
-# 	-sv \
-# 	$(target).v \
-# 	-f ../../tb/filelist \
-# 	-f ../../tb/codelist \
-# 	-ssf $(target).fsdb & 
 
 verdi:
 	verdi \

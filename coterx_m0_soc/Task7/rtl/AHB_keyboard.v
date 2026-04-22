@@ -15,7 +15,7 @@ module AHBlite_keyboard(
     output wire[31:0] HRDATA,
     output wire       HRESP,
     
-    input wire [15:0] key_data,
+    input wire [15:0] key_reg,
     output wire       key_clear
     );
  
@@ -37,6 +37,6 @@ always@(posedge HCLK or negedge HRESETn)
      wr_en_reg<=1'b0;
     end
 
-    assign key_clear=wr_en_reg? HWDATA[0]:1'b0;
-    assign HRDATA={16'h0,key_data};
+    assign key_clear=wr_en_reg? HWDATA[0]:1'b0; 
+    assign HRDATA={16'h0,key_reg};
     endmodule

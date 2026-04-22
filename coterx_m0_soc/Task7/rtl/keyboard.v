@@ -4,8 +4,8 @@ module Keyboard(
     input                 key_clear,
     input        [3 :0]   col,
     output       [3 :0]   row,
-    output           key_interrupt,
-    output       [15:0]   key_data
+    output                key_interrupt,
+    output       [15:0]   key_reg
     // input        [15:0]   key
 );
 
@@ -34,7 +34,7 @@ keyboard_reg keyboard_reg(
     ,.rstn(rstn)
     ,.key_clear(key_clear)
     ,.key_pulse(key_pulse)
-    ,.key_reg(key_data)
+    ,.key_reg(key_reg)
 );
 
 endmodule

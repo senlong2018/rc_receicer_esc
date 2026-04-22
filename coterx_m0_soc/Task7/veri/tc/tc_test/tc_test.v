@@ -18,7 +18,7 @@ initial begin
   // wait additional cycles then finish
   repeat (5000) @(posedge tb.clk);
   $display("[TC] Done");
-  $finish;
+  SIMREPORT.terminate();
 end
 
 endmodule

@@ -3,15 +3,23 @@ module keyboard_reg (
     input                rstn,
     input                key_clear,//高有效
     input        [15:0]  key_pulse,
-    output  reg  [15:0]  key_reg=0
+    output  reg  [15:0]  key_reg
 );
 
-wire clear;
-assign clear = rstn && (!key_clear) ;
+wire rstn_clear;
+
+genpart_rstn rstn_clear_inst(
+    .clk        ( clk        ),
+    .rstn_i     ( rstn       ),
+    .sw_reset   ( key_clear  ),
+    .scan_rstn  ( 1'b1       ),
+    .scan_mode  ( 1'b0       ),
+    .rstn_o     ( rstn_clear )
+);
 
 
-always @(posedge clk or negedge clear) begin
-    if (!clear) begin
+always @(posedge clk or negedge rstn_clear) begin
+    if (!rstn_clear) begin
         key_reg <=0;
     end else begin
         if(key_pulse[15]) key_reg[15] <= 1'b1;
@@ -34,3 +42,4 @@ always @(posedge clk or negedge clear) begin
 end
 
 endmodule
+
