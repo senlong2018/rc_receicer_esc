@@ -18,7 +18,7 @@ keyboard_scan keyboard_scan(
     ,.key(key)
 );
 
-
+//16个按键，每按下一个按键，产生对于key_pulse,拉高对应key_reg的位，直到AHB写1清除key_reg[15:0]
 wire [15:0] key_pulse;
 keyboard_filter keyboard_filter(
      .clk(clk)

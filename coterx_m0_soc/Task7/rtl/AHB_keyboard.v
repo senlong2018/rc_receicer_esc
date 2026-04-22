@@ -37,6 +37,6 @@ always@(posedge HCLK or negedge HRESETn)
      wr_en_reg<=1'b0;
     end
 
-    assign key_clear=wr_en_reg? HWDATA[0]:1'b0; 
-    assign HRDATA={16'h0,key_reg};
+    assign key_clear=wr_en_reg? HWDATA[0]:1'b0; //AHB写1清除键盘寄存器key_reg[15:0]
+    assign HRDATA={16'h0,key_data};
     endmodule
