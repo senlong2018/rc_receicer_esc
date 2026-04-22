@@ -1,10 +1,14 @@
 // Task4 RTL files (match Task4/rtl)
-../../../rtl/cortexm0ds_logic.v
-../../../rtl/AHBlite_Interconnect.v
-../../../rtl/AHBlite_Decoder.v
-../../../rtl/AHBlite_SlaveMUX.v
 ../../../rtl/AHBlite_Block_RAM.v
-../../../rtl/Block_RAM.v
+../../../rtl/AHBlite_Decoder.v
+../../../rtl/AHBlite_Interconnect.v
+../../../rtl/AHBlite_SlaveMUX.v
 ../../../rtl/AHBlite_WaterLight.v
-../../../rtl/WaterLight.v
+../../../rtl/Block_RAM.v
 ../../../rtl/CortexM0_SoC.v
+../../../rtl/WaterLight.v
+../../../rtl/cortexm0ds_logic.v
+../../../rtl/keyboard.v
+../../../rtl/WaterFlow.sv
+../../../rtl/deglitch.sv
+../../../rtl/key_filter.sv

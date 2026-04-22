@@ -6,7 +6,6 @@
 ../../../rtl/AHBlite_Block_RAM.v
 ../../../rtl/Block_RAM.v
 ../../../rtl/AHBlite_Buzzermusic.v
-../../../rtl/AHBlite_SlaveMUX.v
 ../../../rtl/AHB_keyboard.v
 ../../../rtl/keyboard.v
 ../../../rtl/keyboard_filter.v
