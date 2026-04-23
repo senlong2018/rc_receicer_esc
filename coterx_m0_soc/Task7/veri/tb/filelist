@@ -2,4 +2,5 @@
 ../../tb/timescale.v
 ../../tb/simreport.v
 ../../tb/par_sim.v
+../../tb/key_matrix_model.sv
 ../../tb/tb.sv

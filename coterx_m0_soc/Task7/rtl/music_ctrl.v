@@ -1,14 +1,19 @@
 module music_ctrl(
-input clk,en,rstn,addr_finish,beat_finish,
-output reg addr_en,
-output reg addr_rstn,
-output reg tune_pwm_en,
-output reg tune_pwm_rstn,
-output reg beat_cnt_en,
-output reg beat_cnt_rstn);
+        input  wire clk,
+        input  wire en,
+        input  wire rstn,
+        input  wire addr_finish,
+        input  wire beat_finish,
+        output reg  addr_en,
+        output reg  addr_rstn,
+        output reg  tune_pwm_en,
+        output reg  tune_pwm_rstn,
+        output reg  beat_cnt_en,
+        output reg  beat_cnt_rstn
+);
 
 parameter IDLE = 2'b00;
-parameter ADD = 2'b01;
+parameter ADD  = 2'b01;
 parameter WORK = 2'b10;
 
 reg [3:0] state=2'b01;

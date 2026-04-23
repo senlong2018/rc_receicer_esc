@@ -35,6 +35,12 @@ CortexM0_SoC soc (
     .beep   (beep)
 );
 
+key_matrix_model key_matrix_model_inst(
+    .row ( row ),
+    .col  ( col  )
+);
+
+
 // stimulus and monitors moved to TC (tc_test.v)
 
 endmodule

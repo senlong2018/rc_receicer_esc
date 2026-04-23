@@ -10,9 +10,9 @@ initial begin
   // stimulus: wait for boot then press col0
   repeat (200) @(posedge tb.clk);
   $display("[TC] Stim: press key on col[0]");
-  tb.col = 4'b1110; // assert column 0 (active low)
-  repeat (1000) @(posedge tb.clk);
-  tb.col = 4'b1111; // release
+  // use key_matrix_model task to simulate a real key press with debounce
+  // index: 0..15 (row * 4 + col), duration in ms
+  tb.key_matrix_model_inst.press_key(0, 100); // press key 0 for 100 ms
   $display("[TC] Stim done");
 
   // wait additional cycles then finish
