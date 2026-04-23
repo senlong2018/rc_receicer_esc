@@ -1,4 +1,7 @@
-module keyboard_scan(
+module keyboard_scan#(
+    parameter SCAN_VAL = 100
+)
+(
     input clk,
     input [3:0] col,
     input rstn,           
@@ -12,14 +15,14 @@ module keyboard_scan(
     always@(posedge clk or negedge rstn) begin
        if(!rstn)
             cnt <= 0;
-       else if(cnt == 2499)
+       else if(cnt == SCAN_VAL)
             cnt <= 0;
         else
             cnt <= cnt + 1;
     end
 
     wire update_point;
-    assign update_point = (cnt == 'd2499);
+    assign update_point = (cnt == SCAN_VAL);
 
     always@(posedge clk or negedge rstn)begin
         if(!rstn)

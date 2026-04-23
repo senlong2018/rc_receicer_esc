@@ -1,93 +1,98 @@
 module music_ctrl(
-        input  wire clk,
-        input  wire en,
-        input  wire rstn,
-        input  wire addr_finish,
-        input  wire beat_finish,
-        output reg  addr_en,
-        output reg  addr_rstn,
-        output reg  tune_pwm_en,
-        output reg  tune_pwm_rstn,
-        output reg  beat_cnt_en,
-        output reg  beat_cnt_rstn
+    input      clk,
+    input      en,
+    input      rstn,addr_finish,
+    input      beat_finish,
+    output reg addr_en,
+    output reg addr_rstn,
+    output reg tune_pwm_en,
+    output reg tune_pwm_rstn,
+    output reg beat_cnt_en,
+    output reg beat_cnt_rstn
 );
 
-parameter IDLE = 2'b00;
-parameter ADD  = 2'b01;
-parameter WORK = 2'b10;
+localparam IDLE = 2'b00,
+           ADD  = 2'b01,
+           WORK = 2'b10;
 
-reg [3:0] state=2'b01;
-reg [3:0] state_nxt=2'b01;
+reg [1:0] cur_st;
+reg [1:0] nxt_st;
 
-
-
-always@(en or beat_finish or addr_finish or state)
-begin
-case(state)
-IDLE :begin
-        if(en)
-        state_nxt<=ADD;
-        else 
-        state_nxt<=IDLE;
-        end
-ADD:begin
-        if(addr_finish)
-        state_nxt<=IDLE;
-        else
-        state_nxt<=WORK;
-        end
-WORK:     begin
-        if(beat_finish)
-        state_nxt<=ADD;
-        else
-        state_nxt<=WORK;
-        end
- default:state_nxt<=IDLE;
- endcase
- end
+always@(*) begin
+    nxt_st = cur_st;
+    case(cur_st)
+        IDLE :  begin
+                if(en)
+                    nxt_st=ADD;
+                end
+        ADD:    begin
+                if(addr_finish)
+                    nxt_st=IDLE;
+                else
+                    nxt_st=WORK;
+                end
+        WORK:   begin
+                if(beat_finish)
+                    nxt_st=ADD;
+                end
+        default:nxt_st=IDLE;
+     endcase
+end
 
  always@(posedge clk or negedge rstn)
  begin
  if(!rstn)
- state<=IDLE;
+    cur_st<=IDLE;
  else
- state<=state_nxt;
+    cur_st<=nxt_st;
  end
  
- always@(posedge clk)
- case(state_nxt)
- IDLE:
-         begin
+ always@(posedge clk or negedge rstn) begin
+     if(!rstn) begin
          addr_en<=1'b0;
          addr_rstn<=1'b0;
          tune_pwm_en<=1'b0;
          tune_pwm_rstn<=1'b0;
          beat_cnt_en<=1'b0;
          beat_cnt_rstn<=1'b0;
-         end
-ADD:     begin
-         addr_en<=1'b1;
-         addr_rstn<=1'b1;
-         tune_pwm_en<=1'b0;
-         tune_pwm_rstn<=1'b0;
-         beat_cnt_en<=1'b0;
-         beat_cnt_rstn<=1'b0;
-         end
-WORK:     begin
-         addr_en<=1'b0;
-         addr_rstn<=1'b1;
-         tune_pwm_en<=1'b1;
-         tune_pwm_rstn<=1'b1;
-         beat_cnt_en<=1'b1;
-         beat_cnt_rstn<=1'b1;
-         end
-default:begin
-         addr_en<=1'b0;
-         addr_rstn<=1'b0;
-         tune_pwm_en<=1'b0;
-         tune_pwm_rstn<=1'b0;
-         beat_cnt_en<=1'b0;
-         beat_cnt_rstn<=1'b0;
-         end
-         endcase
-         endmodule
+     end     
+     else begin
+        case(nxt_st)
+        IDLE:
+                 begin
+                 addr_en<=1'b0;
+                 addr_rstn<=1'b0;
+                 tune_pwm_en<=1'b0;
+                 tune_pwm_rstn<=1'b0;
+                 beat_cnt_en<=1'b0;
+                 beat_cnt_rstn<=1'b0;
+                 end
+        ADD:     begin
+                 addr_en<=1'b1;
+                 addr_rstn<=1'b1;
+                 tune_pwm_en<=1'b0;
+                 tune_pwm_rstn<=1'b0;
+                 beat_cnt_en<=1'b0;
+                 beat_cnt_rstn<=1'b0;
+                 end
+        WORK:     begin
+                 addr_en<=1'b0;
+                 addr_rstn<=1'b1;
+                 tune_pwm_en<=1'b1;
+                 tune_pwm_rstn<=1'b1;
+                 beat_cnt_en<=1'b1;
+                 beat_cnt_rstn<=1'b1;
+                 end
+        default:begin
+                 addr_en<=1'b0;
+                 addr_rstn<=1'b0;
+                 tune_pwm_en<=1'b0;
+                 tune_pwm_rstn<=1'b0;
+                 beat_cnt_en<=1'b0;
+                 beat_cnt_rstn<=1'b0;
+                 end
+                 endcase
+             end
+ end
+         
+endmodule

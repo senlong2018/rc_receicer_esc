@@ -1,6 +1,5 @@
 module Block_RAM #(
-    parameter ADDR_WIDTH = 12,
-    parameter string HEX_FILE = "../keil/code.hex"
+    parameter ADDR_WIDTH = 12
 )   (
     input clka,
     input [ADDR_WIDTH-1:0] addra,
@@ -13,7 +12,7 @@ module Block_RAM #(
 (* ram_style="block" *)reg [31:0] mem [(2**ADDR_WIDTH-1):0];
 
 initial begin
-    $readmemh(HEX_FILE, mem);
+    $readmemh("/home/ICer/ic_prjs/rc_receicer_esc/coterx_m0_soc/Task7/keil/code.hex", mem);
 end
 
 always@(posedge clka) begin
